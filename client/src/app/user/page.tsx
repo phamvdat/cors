@@ -37,10 +37,7 @@ const UserPage = () => {
       age: 24,
     };
     try {
-      const { data } = await axios.put(
-        `${endpoint}/updateUser/${userId}`,
-        user
-      );
+      const { data } = await axios.put(`${endpoint}/${userId}`, user);
       console.log(data);
     } catch (error) {
       console.error(error);
@@ -50,7 +47,7 @@ const UserPage = () => {
   const deleteUser = async () => {
     const userId = '1';
     try {
-      const { data } = await axios.delete(`${endpoint}/deleteUser/${userId}`);
+      const { data } = await axios.delete(`${endpoint}/${userId}`);
       console.log(data);
     } catch (error) {
       console.error(error);
